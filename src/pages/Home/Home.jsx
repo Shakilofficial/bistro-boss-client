@@ -2,6 +2,8 @@ import AboutBanner from "../../components/Banner/AboutBanner";
 import Banner from "../../components/Banner/Banner";
 import CallUsBanner from "../../components/Banner/CallUsBanner";
 import Category from "./Category/Category";
+import Featured from "./Featured/Featured";
+import Recommend from "./Recommend/Recommend";
 
 const Home = () => {
   return (
@@ -10,6 +12,8 @@ const Home = () => {
       <Category />
       <AboutBanner />
       <CallUsBanner />
+      <Recommend />
+      <Featured />
     </div>
   );
 };
