@@ -7,7 +7,9 @@ const Main = () => {
     <div className="">
       <Navbar />
       <Outlet></Outlet>
-      <Footer />
+      <div className="mt-8">
+        <Footer />
+      </div>
     </div>
   );
 };
