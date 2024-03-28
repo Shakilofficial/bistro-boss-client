@@ -9,7 +9,7 @@ const Recommend = () => {
         subHeading="Should Try"
         heading="CHEF RECOMMENDS"
       ></SectionTitle>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 p-4 mx-8 lg:mx-0">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 p-4 max-w-screen-lg mx-8 lg:mx-auto">
         {/* card-1 */}
         <div className="card card-compact h-[440px] w-80 bg-base-100 shadow-xl">
           <figure>
