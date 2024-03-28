@@ -4,6 +4,7 @@ import CallUsBanner from "../../components/Banner/CallUsBanner";
 import Category from "./Category/Category";
 import Featured from "./Featured/Featured";
 import Recommend from "./Recommend/Recommend";
+import Testimonials from "./Testimonials/Testimonials";
 
 const Home = () => {
   return (
@@ -14,6 +15,7 @@ const Home = () => {
       <CallUsBanner />
       <Recommend />
       <Featured />
+      <Testimonials />
     </div>
   );
 };
