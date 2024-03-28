@@ -8,7 +8,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import quote from "../../../assets/icon/quote.svg";
 import SectionTitle from "../../../components/SectionTitle/SectionTitle";
 
-
 const Testimonials = () => {
   const [reviews, setReviews] = useState([]);
 

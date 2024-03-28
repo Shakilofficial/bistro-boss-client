@@ -3,6 +3,7 @@ import Banner from "../../components/Banner/Banner";
 import CallUsBanner from "../../components/Banner/CallUsBanner";
 import Category from "./Category/Category";
 import Featured from "./Featured/Featured";
+import PopularMenu from "./PopularMenu/PopularMenu";
 import Recommend from "./Recommend/Recommend";
 import Testimonials from "./Testimonials/Testimonials";
 
@@ -12,6 +13,7 @@ const Home = () => {
       <Banner />
       <Category />
       <AboutBanner />
+      <PopularMenu />
       <CallUsBanner />
       <Recommend />
       <Featured />
