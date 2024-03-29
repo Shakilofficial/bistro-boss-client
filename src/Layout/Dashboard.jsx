@@ -1,10 +1,10 @@
 import {
-    FaAd,
-    FaCalendar,
-    FaHome,
-    FaList,
-    FaSearch,
-    FaShoppingCart,
+  FaAd,
+  FaAlignJustify,
+  FaCalendar,
+  FaHome,
+  FaList,
+  FaShoppingCart,
 } from "react-icons/fa";
 import { NavLink, Outlet } from "react-router-dom";
 import useCart from "../hooks/useCart";
@@ -55,7 +55,7 @@ const Dashboard = () => {
           </li>
           <li>
             <NavLink to="/order/salad">
-              <FaSearch></FaSearch>
+              <FaAlignJustify />
               Menu
             </NavLink>
           </li>
