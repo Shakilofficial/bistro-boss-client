@@ -1,6 +1,5 @@
 import { useContext, useEffect, useState } from "react";
 import { Helmet } from "react-helmet-async";
-import { FaFacebookF, FaGithub, FaGoogle } from "react-icons/fa6";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import {
   LoadCanvasTemplate,
@@ -10,6 +9,7 @@ import {
 import Swal from "sweetalert2";
 import loginBg from "../../assets/others/authentication.png";
 import loginImg from "../../assets/others/authentication2.png";
+import Social from "../../components/Shared/Social/Social";
 import { AuthContext } from "../../providers/AuthProvider";
 
 const Login = () => {
@@ -129,15 +129,7 @@ const Login = () => {
                   Or Sign In with
                 </h3>
                 <div className="flex justify-center items-center space-x-3">
-                  <button className="p-2 border-2 border-[#b06a00] rounded-full">
-                    <FaFacebookF />
-                  </button>
-                  <button className="p-2 border-2 border-[#b06a00] rounded-full">
-                    <FaGoogle />
-                  </button>
-                  <button className="p-2 border-2 border-[#b06a00] rounded-full">
-                    <FaGithub />
-                  </button>
+                  <Social />
                 </div>
               </div>
             </div>

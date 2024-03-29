@@ -1,13 +1,13 @@
 import { useContext } from "react";
 import { Helmet } from "react-helmet-async";
 import { useForm } from "react-hook-form";
-import { FaFacebookF, FaGithub, FaGoogle } from "react-icons/fa6";
 import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import loginBg from "../../assets/others/authentication.png";
 import loginImg from "../../assets/others/authentication2.png";
 import useAxiosPublic from "../../hooks/useAxiosPublic";
 import { AuthContext } from "../../providers/AuthProvider";
+import Social from "../../components/Shared/Social/Social";
 
 const Signup = () => {
   const axiosPublic = useAxiosPublic();
@@ -33,7 +33,6 @@ const Signup = () => {
           };
           axiosPublic.post("/users", userInfo).then((res) => {
             if (res.data.insertedId) {
-              console.log("user added to the database");
               reset();
               Swal.fire({
                 position: "top-end",
@@ -167,15 +166,7 @@ const Signup = () => {
                   Or Sign Up with
                 </h3>
                 <div className="flex justify-center items-center space-x-3">
-                  <button className="p-2 border-2 border-[#b06a00] rounded-full">
-                    <FaFacebookF />
-                  </button>
-                  <button className="p-2 border-2 border-[#b06a00] rounded-full">
-                    <FaGoogle />
-                  </button>
-                  <button className="p-2 border-2 border-[#b06a00] rounded-full">
-                    <FaGithub />
-                  </button>
+                  <Social />
                 </div>
               </div>
             </div>
