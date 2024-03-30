@@ -1,8 +1,8 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
-import { AuthContext } from "../../../providers/AuthProvider";
 import { FaCartShopping } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 import useCart from "../../../hooks/useCart";
+import { AuthContext } from "../../../providers/AuthProvider";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
@@ -25,38 +25,20 @@ const Navbar = () => {
       <li className="font-semibold">
         <Link to="/order/dessert">Order Food</Link>
       </li>
-      <li>
-        <Link to="/dashboard/mycart">
-          <button className="btn gap-2">
-            <FaCartShopping />
-            <div className="badge badge-secondary">+{cart?.length || 0}</div>
-          </button>
+      <li className="font-semibold">
+        <Link to="/dashboard/mycart" className="flex items-center">
+          <FaCartShopping />
+          <span className="ml-1">Cart</span>
+          <div className="badge badge-secondary">+{cart?.length || 0}</div>
         </Link>
       </li>
-
-      {user ? (
-        <>
-          <span>{user?.displayName}</span>
-          <button
-            onClick={handleLogOut}
-            className="btn btn-ghost font-semibold"
-          >
-            LogOut
-          </button>
-        </>
-      ) : (
-        <>
-          <li className="font-semibold">
-            <Link to="/login">Login</Link>
-          </li>
-        </>
-      )}
     </>
   );
+
   return (
     <div>
       <div className="navbar fixed z-10 bg-opacity-30 max-w-screen-xl bg-black text-white">
-        <div className="navbar-start">
+        <div className="navbar-start flex items-center space-x-4">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
               <svg
@@ -81,15 +63,36 @@ const Navbar = () => {
               {navOptions}
             </ul>
           </div>
-          <a className="btn btn-ghost text-xl">Bistro Boss</a>
+          <Link to="/" className=" text-orange-500 text-lg font-semibold">
+            Bistro Boss
+          </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1 text-orange-400">
+          <ul className="menu menu-horizontal px-1 text-orange-500">
             {navOptions}
           </ul>
         </div>
-        <div className="navbar-end">
-          <a className="btn">Button</a>
+        <div className="navbar-end flex items-center">
+          {user ? (
+            <>
+              <span className="font-semibold text-orange-500">
+                {user.displayName}
+              </span>
+              <button
+                onClick={handleLogOut}
+                className="btn btn-sm font-semibold ml-4 text-red-600 hover:text-red-800 focus:outline-none"
+              >
+                LogOut
+              </button>
+            </>
+          ) : (
+            <Link
+              to="/login"
+              className="btn btn-sm font-semibold text-blue-600 hover:text-blue-800 focus:outline-none"
+            >
+              Login
+            </Link>
+          )}
         </div>
       </div>
     </div>
