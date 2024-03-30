@@ -1,19 +1,20 @@
 import { createBrowserRouter } from "react-router-dom";
 import Dashboard from "../Layout/Dashboard";
 import Main from "../Layout/Main";
+import AddItems from "../pages/Dashboard/AddItems/AddItems";
+import AllUsers from "../pages/Dashboard/AllUsers/AllUsers";
+import ManageBooking from "../pages/Dashboard/ManageBooking/ManageBooking";
+import ManageItems from "../pages/Dashboard/ManageItems/ManageItems";
 import MyCart from "../pages/Dashboard/MyCart/MyCart";
+import UpdateItem from "../pages/Dashboard/UpdateItem/UpdateItem";
 import Home from "../pages/Home/Home";
 import Login from "../pages/Login/Login";
 import Menu from "../pages/Menu/Menu";
 import Order from "../pages/Order/Order";
 import Secret from "../pages/Secret/Secret";
 import Signup from "../pages/Signup/Signup";
-import PrivateRoute from "../providers/PrivateRoute";
-import AllUsers from "../pages/Dashboard/AllUsers/AllUsers";
 import AdminRoute from "../providers/AdminRoute";
-import AddItems from "../pages/Dashboard/AddItems/AddItems";
-import ManageItems from "../pages/Dashboard/ManageItems/ManageItems";
-import UpdateItem from "../pages/Dashboard/UpdateItem/UpdateItem";
+import PrivateRoute from "../providers/PrivateRoute";
 
 export const router = createBrowserRouter([
   {
@@ -84,6 +85,14 @@ export const router = createBrowserRouter([
         ),
       },
       {
+        path: "bookings",
+        element: (
+          <AdminRoute>
+            <ManageBooking />
+          </AdminRoute>
+        ),
+      },
+      {
         path: "updateItem/:id",
         element: (
           <AdminRoute>
@@ -91,7 +100,7 @@ export const router = createBrowserRouter([
           </AdminRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/menu/${params.id}`),
+          fetch(`https://bistro-boss-serve-five.vercel.app/menu/${params.id}`),
       },
       {
         path: "users",
